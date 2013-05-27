@@ -1,0 +1,59 @@
+<html>
+<head>
+	<script src="CanvasDye.js"></script>
+	<style>
+
+		/*Minimal Reset*/
+		body, canvas {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		canvas {
+			width: 100%;
+			height: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+	<script>
+
+		var testImage = new Image();
+		var dyedTestImage;
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		var pxratio = window.devicePixelRatio;
+
+		function draw () {
+
+			canvas.width = window.innerWidth*pxratio;
+			canvas.height = window.innerHeight*pxratio;
+			ctx.scale(pxratio,pxratio);
+			
+			ctx.beginPath();
+			ctx.moveTo(20,20);
+			ctx.lineTo(100,20);
+			ctx.lineTo(20,100);
+			ctx.lineTo(20,20);
+			ctx.fill();
+
+			ctx.drawImage(testImage, window.innerWidth/4 -testImage.width/2, window.innerHeight/2 -testImage.height/2, testImage.width, testImage.height);
+			ctx.drawImage(dyedTestImage, 3*window.innerWidth/4 -testImage.width/2, window.innerHeight/2 -testImage.height/2, testImage.width, testImage.height);
+		}
+
+		testImage.onload = function () {
+			dyedTestImage = dyeImageWithColor(testImage, '#33CC33', 0.7);
+			testImage.width /= pxratio;
+			testImage.height /= pxratio;
+			draw();
+		};
+
+		window.onresize = draw;
+
+		if (pxratio == 2) testImage.src = "testImage@2x.png";
+		else testImage.src = "testImage.png";
+
+	</script>
+</body>
