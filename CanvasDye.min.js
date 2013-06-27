@@ -1,0 +1,1 @@
+function dyeImageWithColor(c,d,e){var a=document.createElement("canvas");a.width=c.width;a.height=c.height;var b=a.getContext("2d");e&&(b.globalAlpha=e);d&&(b.fillStyle=d);b.fillRect(0,0,a.width,a.height);b.globalCompositeOperation="destination-atop";b.globalAlpha=1;b.drawImage(c,0,0);return a};
