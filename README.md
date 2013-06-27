@@ -1,7 +1,7 @@
 CanvasDye
 =========
 
-A simple function to tint PNG images.
+A simple function to tint PNG images using Javascript, very useful for projects/games using HTML5 Canvas.
 
 ```javascript
 
