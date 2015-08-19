@@ -1,0 +1,29 @@
+{
+  "name": "imgdye",
+  "version": "0.1.0",
+  "description": "Tint PNG images using JavaScript.",
+  "main": "imgdye.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dasilvacontin/imgdye.git"
+  },
+  "keywords": [
+    "tint",
+    "png",
+    "images",
+    "img",
+    "dye"
+  ],
+  "author": "David da Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dasilvacontin/imgdye/issues"
+  },
+  "homepage": "https://github.com/dasilvacontin/imgdye#readme",
+  "devDependencies": {
+    "standard": "^5.1.0"
+  }
+}
