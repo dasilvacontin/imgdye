@@ -4,7 +4,7 @@ function imgdye (image, color, opacity) {
   buffer.height = image.height
   var ctx = buffer.getContext('2d')
   if (color) ctx.fillStyle = color
-  if (opacity) ctx.globalAlpha = opacity
+  if (opacity != null) ctx.globalAlpha = opacity
   ctx.fillRect(0, 0, buffer.width, buffer.height)
   ctx.globalCompositeOperation = 'destination-atop'
   ctx.globalAlpha = 1
